@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 # --- STAGE 1 & 2: App Setup & Data Preprocessing ---
 st.set_page_config(page_title="Rocket Path Visualization", layout="wide", page_icon="🚀")
-st.title("🚀 Aerospace Mission Control & Flight Simulator")
+st.title("Aerospace Mission Control & Flight Simulator")
 
 @st.cache_data
 def load_and_clean_data():
@@ -36,7 +36,7 @@ except Exception as e:
     st.stop()
 
 # --- SIDEBAR: Control Center ---
-st.sidebar.header("🛠️ Mission Configuration")
+st.sidebar.header("Mission Configuration")
 
 # Filters
 target_type = st.sidebar.multiselect("Select Target Type", options=df['Target Type'].unique(), default=df['Target Type'].unique())
@@ -51,7 +51,7 @@ filtered_df = df[
 ]
 
 # --- STAGE 2: Data Visualization & EDA ---
-st.header("📊 Mission Data Analysis")
+st.header("Mission Data Analysis")
 
 # KPI Summary
 col1, col2, col3, col4 = st.columns(4)
@@ -90,7 +90,7 @@ with tab3:
 
 # --- STAGE 3: Rocket Path Simulation (Calculus & Physics) ---
 st.divider()
-st.header("☄️ Rocket Path Simulation Engine")
+st.header("Rocket Path Simulation Engine")
 st.write("""
 This engine calculates the vertical trajectory using **Differential Equations** and **Newton's Second Law** ($F = ma$).
 As the rocket burns fuel, its mass ($m$) decreases, which changes the acceleration ($a$) over time.
@@ -98,23 +98,21 @@ As the rocket burns fuel, its mass ($m$) decreases, which changes the accelerati
 
 
 
-with st.expander("🔧 Simulation Physics Parameters"):
+with st.expander("Simulation Physics Parameters"):
     c1, c2, c3 = st.columns(3)
     user_thrust = c1.number_input("Engine Thrust (kN)", value=4000, step=500)
     user_payload = c2.slider("Simulation Payload (Tons)", 5, 150, 50)
     user_fuel = c3.slider("Fuel Load (Tons)", 50, 1000, 500)
     
-    # Constants
-    g = 9.81  # Gravity (m/s^2)
-    burn_rate = 2.5 # Tons of fuel burned per second
-    dry_mass = 40 # Structural mass of the rocket
+    g = 9.81 
+    burn_rate = 2.5
+    dry_mass = 40
 
-# Numerical Integration (Euler Method)
 def simulate_flight(thrust_kn, payload_t, fuel_t, structural_t, burn_r):
-    dt = 0.5 # half-second intervals
+    dt = 0.5 
     t_max = 500
     
-    # Initialize variables
+
     time, alt, vel, mass = [0], [0], [0], [structural_t + payload_t + fuel_t]
     current_fuel = fuel_t
     
@@ -123,21 +121,17 @@ def simulate_flight(thrust_kn, payload_t, fuel_t, structural_t, burn_r):
         v = vel[-1]
         h = alt[-1]
         
-        # Calculate Forces
-        # T is thrust, W is weight (m*g), D is drag
         thrust = (thrust_kn / 10) if current_fuel > 0 else 0 
         weight = m * g
-        drag = 0.5 * 0.5 * (v**2) * np.exp(-h/10000) # Density drops with altitude
-        
-        # Acceleration a = (T - W - D) / m
+        drag = 0.5 * 0.5 * (v**2) * np.exp(-h/10000) 
         net_force = (thrust * 1000) - weight - drag
         a = net_force / m
         
-        # Update motion (v = v0 + at; h = h0 + vt)
+
         new_v = v + a * dt
         new_h = h + new_v * dt
         
-        if new_h < 0: break # Simulation ends if rocket crashes or doesn't lift
+        if new_h < 0: break
             
         time.append(time[-1] + dt)
         alt.append(new_h)
@@ -151,7 +145,7 @@ def simulate_flight(thrust_kn, payload_t, fuel_t, structural_t, burn_r):
             
     return pd.DataFrame({"Time": time, "Altitude": alt, "Velocity": vel})
 
-if st.button("🚀 Launch Simulation"):
+if st.button("Launch Simulation"):
     sim_data = simulate_flight(user_thrust, user_payload, user_fuel, dry_mass, burn_rate)
     
     if len(sim_data) > 1:
@@ -169,3 +163,4 @@ if st.button("🚀 Launch Simulation"):
 
 st.markdown("---")
 st.caption("Developed for the Summative Assessment: Mathematics for AI-I")
+
