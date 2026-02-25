@@ -74,12 +74,13 @@ Tools & Libraries
   * Addition of 3D trajectory visualization using advanced rendering libraries.
   * Expansion of the dataset to include satellite and interplanetary missions.
 
-# Acknowledgments
+# Credits
 
 Developed as part of the Mathematics for AI course to demonstrate the synergy between mathematical theory, computational modeling, and aerospace engineering.
 
-* Author: A Jeyaditya
+* Student Name: A Jeyaditya
+* Registration number: 1000406
 * CRS Facilitator: Syed Ali Beema
 * Institution: Jain Vidyalaya
 * Course: Mathematics for AI
-Year: 2026
+* Year: 2026
