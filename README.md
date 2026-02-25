@@ -1,22 +1,24 @@
-# 1000406_Jeyaditya_AIY1_SA_Rocket_path_visualisation
-🚀 Aerospace Mission Control & Flight Simulator
-🧮 Mathematics for AI — Summative Assessment
-📘 Project Overview
+1000406_Jeyaditya_AIY1_SA_Rocket_path_visualisation
+
+# Aerospace Mission Control & Flight Simulator
+## Mathematics for AI — Summative Assessment
+Project Overview
 
 Aerospace Mission Control & Flight Simulator is an interactive Streamlit web application developed as part of the Mathematics for AI course. The project integrates data analytics, mathematical modeling, and simulation techniques to explore and predict rocket flight dynamics.
 
 The application serves two primary purposes:
 
-    Analyze historical rocket mission data to uncover trends and correlations between mission parameters.
-    Simulate new flight trajectories using physics-based models grounded in classical mechanics and numerical computation.
+* Analyze historical rocket mission data to uncover trends and correlations between mission parameters.
+*  Simulate new flight trajectories using physics-based models grounded in classical mechanics and numerical computation.
 
 This project bridges theoretical mathematics with practical aerospace applications, offering an engaging platform for both data-driven insights and real-time simulation.
-✨ Features
-##Data Preprocessing
 
-    Cleans and structures raw rocket mission datasets.
-    Handles DD-MM-YYYY date formats and null values efficiently.
-    Ensures consistent data types for accurate analysis and visualization.
+# Features
+## Data Preprocessing
+
+* Cleans and structures raw rocket mission datasets.
+* Handles DD-MM-YYYY date formats and null values efficiently.
+* Ensures consistent data types for accurate analysis and visualization.
 
 ## Exploratory Data Analysis (EDA)
 
@@ -46,9 +48,10 @@ The project integrates several mathematical foundations central to AI and aerosp
       Applied in exploratory data analysis to identify trends, correlations, and performance metrics.
 
 These mathematical tools collectively enable accurate simulation and insightful data interpretation.
+
 ## Technologies Used
 
-# Category
+## Category
 Tools & Libraries
 * Frontend Framework
    Streamlit
