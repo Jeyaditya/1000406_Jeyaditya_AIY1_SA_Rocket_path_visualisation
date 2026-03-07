@@ -83,6 +83,6 @@ Developed as part of the Mathematics for AI course to demonstrate the synergy be
 * Student Name: A Jeyaditya
 * Registration number: 1000406
 * CRS Facilitator: Syed Ali Beema
-* Institution: Jain Vidyalaya
+* Institution: Jain Vidyalaya IB World School
 * Course: Mathematics for AI
 * Year: 2026
