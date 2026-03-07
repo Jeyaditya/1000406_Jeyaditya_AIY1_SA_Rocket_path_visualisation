@@ -1,6 +1,8 @@
 1000406_Jeyaditya_AIY1_SA_Rocket_path_visualisation
 
 # Aerospace Mission Control & Flight Simulator
+Link to access app - [https://1000406-jeyaditya-aiy1-sa-rocket-path-visualisation.streamlit.app/]
+
 ## Mathematics for AI — Summative Assessment
 Project Overview
 
